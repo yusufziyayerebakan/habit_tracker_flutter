@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/core/helpers/custom_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../core/models/streak.dart';
 import '../core/services/dialog_service.dart';
 import '../core/services/habit_service.dart';
 import '../core/models/habit.dart';

@@ -1,5 +1,3 @@
-import 'package:habit_tracker/core/helpers/custom_logger.dart';
-
 import 'streak.dart';
 
 class Day {

@@ -1,7 +1,4 @@
-import 'package:habit_tracker/core/helpers/custom_logger.dart';
-
 import 'day.dart';
-import 'streak.dart';
 
 class Habit {
   int id;
