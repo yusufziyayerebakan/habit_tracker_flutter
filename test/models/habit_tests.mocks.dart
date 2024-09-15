@@ -3,9 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i4;
+import 'dart:ui' as _i6;
 
+import 'package:habit_tracker/core/models/day.dart' as _i4;
 import 'package:habit_tracker/core/models/habit.dart' as _i3;
+import 'package:habit_tracker/core/models/streak.dart' as _i5;
 import 'package:habit_tracker/core/services/habit_service.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -71,19 +73,64 @@ class MockHabitService extends _i1.Mock implements _i2.HabitService {
 
   @override
   void addHabitStreak(
-    _i3.Habit? habit,
+    int? habitId,
     DateTime? date,
   ) =>
       super.noSuchMethod(
         Invocation.method(
           #addHabitStreak,
           [
-            habit,
+            habitId,
             date,
           ],
         ),
         returnValueForMissingStub: null,
       );
+
+  @override
+  void addStreakToDay(
+    _i4.Day? day,
+    _i5.Streak? streak,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addStreakToDay,
+          [
+            day,
+            streak,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void addDayToHabit(
+    List<_i4.Day>? habitDays,
+    DateTime? date,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addDayToHabit,
+          [
+            habitDays,
+            date,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i4.Day? getDayOfHabitByDate(
+    List<_i4.Day>? habitDays,
+    DateTime? date,
+  ) =>
+      (super.noSuchMethod(Invocation.method(
+        #getDayOfHabitByDate,
+        [
+          habitDays,
+          date,
+        ],
+      )) as _i4.Day?);
 
   @override
   void updateHabitName(
@@ -103,14 +150,14 @@ class MockHabitService extends _i1.Mock implements _i2.HabitService {
 
   @override
   void addCompletedDate(
-    _i3.Habit? habit,
+    int? habitId,
     DateTime? date,
   ) =>
       super.noSuchMethod(
         Invocation.method(
           #addCompletedDate,
           [
-            habit,
+            habitId,
             date,
           ],
         ),
@@ -118,7 +165,7 @@ class MockHabitService extends _i1.Mock implements _i2.HabitService {
       );
 
   @override
-  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -127,7 +174,7 @@ class MockHabitService extends _i1.Mock implements _i2.HabitService {
       );
 
   @override
-  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

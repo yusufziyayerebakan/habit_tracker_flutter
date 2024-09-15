@@ -53,15 +53,21 @@ class _HabitTrackerScreenState extends State<HabitTrackerScreen> {
                 });
               },
               eventLoader: (day) {
-                final habitDay = widget.habit.getDay(day);
+                final habitService =
+                    Provider.of<HabitService>(context, listen: false);
+                final habitDay =
+                    habitService.getDayOfHabitByDate(widget.habit.days, day);
                 return habitDay != null && habitDay.isCompleted()
                     ? [widget.habit]
                     : [];
               },
               calendarBuilders: CalendarBuilders(
                 defaultBuilder: (context, date, events) {
-                  final day = widget.habit.getDay(date);
-                  final streakCount = day?.totalStreaks ?? 0;
+                  final habitService =
+                      Provider.of<HabitService>(context, listen: false);
+                  final habitDay =
+                      habitService.getDayOfHabitByDate(widget.habit.days, date);
+                  final streakCount = habitDay?.totalStreaks ?? 0;
 
                   return Container(
                     margin: const EdgeInsets.all(4.0),
@@ -86,8 +92,11 @@ class _HabitTrackerScreenState extends State<HabitTrackerScreen> {
                   );
                 },
                 selectedBuilder: (context, date, events) {
-                  final day = widget.habit.getDay(date);
-                  final streakCount = day?.totalStreaks ?? 0;
+                  final habitService =
+                      Provider.of<HabitService>(context, listen: false);
+                  final habitDay =
+                      habitService.getDayOfHabitByDate(widget.habit.days, date);
+                  final streakCount = habitDay?.totalStreaks ?? 0;
 
                   return Container(
                     margin: const EdgeInsets.all(4.0),
@@ -105,8 +114,11 @@ class _HabitTrackerScreenState extends State<HabitTrackerScreen> {
                   );
                 },
                 todayBuilder: (context, date, _) {
-                  final day = widget.habit.getDay(date);
-                  final streakCount = day?.totalStreaks ?? 0;
+                  final habitService =
+                      Provider.of<HabitService>(context, listen: false);
+                  final habitDay =
+                      habitService.getDayOfHabitByDate(widget.habit.days, date);
+                  final streakCount = habitDay?.totalStreaks ?? 0;
 
                   return Container(
                     margin: const EdgeInsets.all(4.0),
@@ -149,7 +161,7 @@ class _HabitTrackerScreenState extends State<HabitTrackerScreen> {
     final habitService = Provider.of<HabitService>(context, listen: false);
     final now = DateTime.now();
 
-    habitService.addHabitStreak(widget.habit, now);
+    habitService.addHabitStreak(widget.habit.id, now);
 
     Navigator.pop(context);
   }
