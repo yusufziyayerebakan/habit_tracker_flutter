@@ -70,7 +70,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or feedback, feel free to reach out:
 
-- Email: y.z.yerebakan@.com
+- Email: y.z.yerebakan@gmail.com
 - GitHub: [yusufziyayerebakan](https://github.com/yusufziyayerebakan)
 
 ---
